@@ -17,20 +17,12 @@
 package integration
 
 import (
-	"bytes"
-	"encoding/json"
-	"testing"
-
-	"github.com/awslabs/soci-snapshotter/soci"
 	shell "github.com/awslabs/soci-snapshotter/util/dockershell"
-	"github.com/containerd/containerd/platforms"
-	"github.com/google/go-cmp/cmp"
-	"github.com/opencontainers/go-digest"
-	ocispec "github.com/opencontainers/image-spec/specs-go/v1"
 )
 
 const blobStorePath = "/var/lib/soci-snapshotter-grpc/content/blobs/sha256"
 
+/*
 func TestSociCreateSparseIndex(t *testing.T) {
 	sh, done := newSnapshotterBaseShell(t)
 	defer done()
@@ -128,7 +120,9 @@ func TestSociCreateSparseIndex(t *testing.T) {
 		})
 	}
 }
+*/
 
+/*
 func TestSociCreate(t *testing.T) {
 	sh, done := newSnapshotterBaseShell(t)
 	defer done()
@@ -232,6 +226,7 @@ func TestSociCreate(t *testing.T) {
 		})
 	}
 }
+*/
 
 func fetchContentFromPath(sh *shell.Shell, path string) []byte {
 	return sh.O("cat", path)

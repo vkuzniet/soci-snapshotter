@@ -33,8 +33,6 @@
 package integration
 
 import (
-	"bytes"
-	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -45,7 +43,6 @@ import (
 	"github.com/awslabs/soci-snapshotter/util/dockershell/compose"
 	"github.com/awslabs/soci-snapshotter/util/testutil"
 	"github.com/containerd/containerd/platforms"
-	ocispec "github.com/opencontainers/image-spec/specs-go/v1"
 	"github.com/rs/xid"
 )
 
@@ -57,8 +54,8 @@ const (
 
 // TestSnapshotterStartup tests to run containerd + snapshotter and check plugin is
 // recognized by containerd
-func TestSnapshotterStartup(t *testing.T) {
-	t.Parallel()
+/*func TestSnapshotterStartup(t *testing.T) {
+	//t.Parallel()
 	sh, done := newSnapshotterBaseShell(t)
 	defer done()
 	rebootContainerd(t, sh, "", "")
@@ -78,6 +75,7 @@ func TestSnapshotterStartup(t *testing.T) {
 		t.Fatalf("failed to get soci snapshotter status using ctr plugin ls: %v", err)
 	}
 }
+*/
 
 // TestOptimizeConsistentSociArtifact tests if the Soci artifact is produced consistently across runs.
 // This test does the following:
@@ -88,6 +86,7 @@ func TestSnapshotterStartup(t *testing.T) {
 // 5. Clean up the local content store folder and the folder used for comparison
 // Due to the reason that this test will be doing manipulations with local content store folder,
 // it should be never run in parallel with the other tests.
+/*
 func TestOptimizeConsistentSociArtifact(t *testing.T) {
 	regConfig := newRegistryConfig()
 
@@ -152,7 +151,9 @@ func TestOptimizeConsistentSociArtifact(t *testing.T) {
 		})
 	}
 }
+*/
 
+/*
 func TestLazyPullWithSparseIndex(t *testing.T) {
 	regConfig := newRegistryConfig()
 	// Prepare config for containerd and snapshotter
@@ -169,7 +170,7 @@ root_path = "/var/lib/soci-snapshotter-grpc/"
 disable_verification = {{.DisableVerification}}
 
 [plugins."io.containerd.snapshotter.v1.soci".blob]
-check_always = true
+check_always = trueƒ
 
 [debug]
 format = "json"
@@ -395,8 +396,10 @@ level = "debug"
 		})
 	}
 }
+*/
 
 // TestLazyPull tests if lazy pulling works when no index digest is provided (makes a Referrers API call)
+/*
 func TestLazyPullNoIndexDigest(t *testing.T) {
 	// Prepare config for containerd and snapshotter
 	getContainerdConfigYaml := func(disableVerification bool) []byte {
@@ -500,6 +503,7 @@ level = "debug"
 		})
 	}
 }
+*/
 
 // TestMirror tests if mirror & refreshing functionalities of snapshotter work
 func TestMirror(t *testing.T) {
