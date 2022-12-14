@@ -18,12 +18,12 @@ package framework
 
 import (
 	"context"
-	"os"
+//	"os"
 
 	"github.com/containerd/containerd"
 	"github.com/containerd/containerd/remotes"
 	"github.com/containerd/containerd/remotes/docker"
-	"github.com/containerd/containerd/remotes/docker/config"
+//	"github.com/containerd/containerd/remotes/docker/config"
 )
 
 func (proc *ContainerdProcess) PullImageFromECR(
@@ -41,7 +41,7 @@ func (proc *ContainerdProcess) PullImageFromECR(
 }
 
 func GetECRResolver(ctx context.Context, awsSecretFile string) remotes.Resolver {
-	username := "AWS"
+	/*username := "AWS"
 	secretByteArray, err := os.ReadFile(awsSecretFile)
 	secret := string(secretByteArray)
 	if err != nil {
@@ -50,12 +50,13 @@ func GetECRResolver(ctx context.Context, awsSecretFile string) remotes.Resolver 
 	hostOptions := config.HostOptions{}
 	hostOptions.Credentials = func(host string) (string, string, error) {
 		return username, secret, nil
-	}
+	}*/
 	var PushTracker = docker.NewInMemoryTracker()
 	options := docker.ResolverOptions{
 		Tracker: PushTracker,
 	}
-	options.Hosts = config.ConfigureHosts(ctx, hostOptions)
+	//options.Hosts = config.ConfigureHosts(ctx, hostOptions)
+	options.PlainHTTP = true
 
 	return docker.NewResolver(options)
 }
