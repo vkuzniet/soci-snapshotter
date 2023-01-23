@@ -12,7 +12,7 @@ require (
 	github.com/pelletier/go-toml v1.9.5
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.9.0
-	github.com/urfave/cli v1.22.10
+	github.com/urfave/cli v1.22.12
 	go.etcd.io/bbolt v1.3.6
 	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f
 	google.golang.org/grpc v1.51.0
@@ -34,7 +34,7 @@ require (
 	github.com/containerd/typeurl v1.0.2 // indirect
 	github.com/containernetworking/cni v1.1.1 // indirect
 	github.com/containernetworking/plugins v1.1.1 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/docker/cli v20.10.11+incompatible // indirect
 	github.com/docker/docker v20.10.7+incompatible // indirect
@@ -74,8 +74,7 @@ require (
 	github.com/prometheus/common v0.30.0 // indirect
 	github.com/prometheus/procfs v0.7.3 // indirect
 	github.com/rs/xid v1.3.0 // indirect
-	github.com/russross/blackfriday/v2 v2.0.1 // indirect
-	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
